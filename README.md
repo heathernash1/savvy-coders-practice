@@ -3,12 +3,12 @@
 ### ~~Small Cars~~
 ##### **Cars**
 
-1. Chevy
-    Malibu
+1. Toyota
+    Landcruiser
 
 
-2. ![Toyota
-    Highlander](https://imgct2.aeplcdn.com/img/800x600/car-data/big/toyota-land-cruiser-image-11526.png?v=35)
+ ![Toyota
+    Landcruiser](https://imgct2.aeplcdn.com/img/800x600/car-data/big/toyota-land-cruiser-image-11526.png?v=35)
     
    ** _link to Toyota_**
 
