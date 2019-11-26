@@ -61,7 +61,7 @@ movieBuff.getGeek = function() {
 const watchMovies = ['Avatar', 'Star Wars', 'Lord of the Rings','Avengers'];
 
 shows.prototype.getGreatMovies = function() {
-  let mlist = "Heare are the great movies."
+  let mlist = "Here are the great movies."
 
   for( let i = 0; i < watchMovies.length; i += 1) {
   mlist += `${this.watchMovies[i]}`;
