@@ -235,16 +235,40 @@
 
  ///use map to create a new Array of Objects
 
-  const shortData = users.map( user => ({
+  const workData = users.map( user => ({
     "name" : user.name,
-    "address": user.address,
-    "phone": user.phone
-  }));
-  console.log(shortData);
+    "company": user.company.name,
 
-const shorterData = users.map(({ name, address, phone })=> ({
+  }));
+  console.log(workData);
+
+const workerData = users.map(({ name, company })=> ({
   name,
-  address,
-  phone
-}));
-console.log(shorterData);
+  "companyName" : company.name,
+
+  }))
+
+  .filter(user => user.companyName.startsWith("A"));
+console.log(workerData);
+
+
+function strippedData (data, fields ){
+//Take in any array of objects and an Array of fields
+//and strip the data down to return just that information
+        // 'd' in this case represents individual user
+return data.map(d =>
+     //field will map for every piece of data - so here that would be every user
+  fields.map(field =>{
+    return{
+
+//By using [], we specify to JS that we want to use the value of the
+      [field]: d[field]
+    };
+
+    })
+  );
+
+}
+const sData = strippedData(users, ["name", "phone"]);
+console.log(sData);
+

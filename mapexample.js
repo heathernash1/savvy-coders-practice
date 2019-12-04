@@ -248,3 +248,8 @@ console.log (shortData);
 
 const longNames = users.filter(user => user.username.length < 5);
 console.log(longNames);
+
+const  longerNames = users.filter(user => user.website.endsWith(".net"));
+console.log( longerNames);
+  const name = "Heather";
+  console.log (name.length);
