@@ -272,3 +272,14 @@ return data.map(d =>
 const sData = strippedData(users, ["name", "phone"]);
 console.log(sData);
 
+//Todo: Tally up the count for each of the TLD .coms and .nets
+
+//1. pull all the websites out makes a array of string
+//2. start tallying up each of the strings - probably with endsWith()
+
+function getWebsites(data ){
+  return data.map (({website}) => website);
+}
+function tallyTLDS(websites){
+  return websites.reduce((acc, website) => acc + website, {});
+}
