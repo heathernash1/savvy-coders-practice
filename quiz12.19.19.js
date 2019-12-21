@@ -45,8 +45,8 @@ const products = [
   }
 ];
 
-function lbs2Kgs(lbs) {
-  return 2.2 * lbs;
+function kgs2Lbs(lbs) {
+  return 2.2 * kgs;
 }
 
 /**
@@ -56,5 +56,15 @@ function lbs2Kgs(lbs) {
  * These heavier products need to be shipped separately,
  * so we have to separate them out.
  */
-const grams = products.map ( product => product.weight * 2.2)
-console.log (grams(products));
+const heavyShipment = products
+.map( product => {
+   product.weight = kgs2Lbs(product.weight)
+return product;
+})
+.filter(product => is);
+console.log (grams(product));
+function isHeavy(product, threshold){
+  return product > threshold;
+}
+const heavyShipmentWeight = heavyShipment.reduce( totalWeight, currentProduct ) =>
+(totalWeight  += currentProduct.weight), 0

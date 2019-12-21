@@ -1,3 +1,5 @@
+
+
 const users = [
   {
     id: 1,
@@ -241,3 +243,31 @@ function getTLD(url) {
 // TODO: MAP over this and just give us back an Array of TLDs
 const TLDs = users.map(user => getTLD(user.website));
 console.log(TLDs);
+
+const eTLDS = users.map(
+  ({website,email})=> `${getTLD(website)} ${getTLD(email)}`
+);
+console.log(eTLDS);
+
+const bizTLDS = users
+.map(({website})=> getTLD(website))
+.filter(website => website === ".biz" );
+
+//console.log(bizTLDS);
+
+const numbers = [1, 2, 3, 5, 6, 7, 8];
+console.log(numbers.reduce((total, num) =>  total + num, 15));
+
+
+
+const TLDTally = users
+.map(({website})=> getTLD(website))
+.reduce((tally, currentTLD) => {
+  if(!tally[currentTLD]){
+  tally[currentTLD ]= 1;
+ } else {
+    tally[currentTLD] += 1;
+  }
+  return tally;
+}, {});
+console.log(TLDTally);

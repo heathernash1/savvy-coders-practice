@@ -1201,25 +1201,35 @@ const todos = [
   }
 ]
 
-function checkTaskCompletion(task)
-   return todos.filter(task => task.completed );
+function checkTaskCompletion(task){
+    return todos.filter(task => task.completed );
 
 }
+function getIncompleteTasks(task) {
+  return todos.filter(task => task.completed === false);
+}
 
-function delegateIncompleteTasksToUser(tasks, workhorse) {
-  return tasks.map(d => d[workhorse]);
+
+
+function delegateIncompleteTasksToUser(task,workhorse) {
+  return todos.map ( task => task.completed === false)
+      task.userId = workhorse;
+
+ // }
+
+  //.map(task => task.userId );
   /**
    * 1. getIncompleteTasks
    * 2. Replace the userId VALUE with 'workhorse'.
    */
-}
 
-function getAllTasksForUser(tasks, user) {
+
+function getAllTasksForUser(task, user) {
   return // Your code here!
 }
 
-function getIncompleteTasks(tasks) {
-  return todos.filter(task => checkTaskCompletion(task));
+function getIncompleteTasks(task) {
+  return todos.filter(task => task.completed === false);
 }
 
 function completeTasksForUser(tasks, user) {
@@ -1242,5 +1252,6 @@ function tallyTasksPerPerson(tasks) {
 }
 
 //console.log(getIncompleteTasks(todos));
-console.log(checkTaskCompletion);
+//console.log(checkTaskCompletion(todos));
 //console.log(tallyTasksPerPerson(todos));
+console.log(delegateIncompleteTasksToUser(todos));
